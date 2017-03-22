@@ -1,6 +1,6 @@
 # Project 6 - Globitek Authentication and Login Throttling
 
-Time spent 4 hours spent in total
+Time spent 5 hours spent in total
 
 ## User Stories
 
@@ -80,7 +80,7 @@ GIF created with [LiceCap](httpwww.cockos.comlicecap).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I had a typo in one of my if-else statemet where I typed "else if" instead of "elseif". And due to php not recognizing that as an error, it took me a long time to figure out that it was a typo issue.
 
 ## License
 
