@@ -6,55 +6,55 @@ Time spent 5 hours spent in total
 
 The following required functionality is completed
 
-1. staffusersnew.php and staffusersedit.php
-   [x]  Form with inputs for Password and Confirm Password
-   [x]  Strong password requirements text
+1\. [x] staffusersnew.php and staffusersedit.php
+  * [x]  Form with inputs for Password and Confirm Password
+  * [x]  Strong password requirements text
 
-2. Data validations
-   [x]  Returns an error if password or confirm_password are blank.
-   [x]  Returns an error if password and confirm_password do not match.
-   [x]  Returns an error if password is not at least 12 characters long.
-   [x]  Returns an error if password does not meet character requirements.
-   [x]  Returns any errors related to other validations already on the user.
+2\. [x] Data validations
+  * [x]  Returns an error if password or confirm_password are blank.
+  * [x]  Returns an error if password and confirm_password do not match.
+  * [x]  Returns an error if password is not at least 12 characters long.
+  * [x]  Returns an error if password does not meet character requirements.
+  * [x]  Returns any errors related to other validations already on the user.
 
-3. Saving a user
-   [x]  Encrypts the password
-   [x]  Stores the password in the database
+3\. [x] Saving a user
+  * [x]  Encrypts the password
+  * [x]  Stores the password in the database
 
-4. Login page
-   [x]  Verify the correct password.
-   [x]  Do not create a User Enumeration vulnerability.
+4\. [x] Login page
+  * [x]  Verify the correct password.
+  * [x]  Do not create a User Enumeration vulnerability.
 
-5. If a user fails to log in
-   [x]  Record the failed login for the first 5 attempts.
-   [x]  Return a too many failed logins message after 5 attempts.
-   [x]  Future attempts will show the number of minutes remaining in the lockout.
-   [x]  After the lockout period, the failed logins count resets to 0.
+5\. [x] If a user fails to log in
+  * [x]  Record the failed login for the first 5 attempts.
+  * [x]  Return a too many failed logins message after 5 attempts.
+  * [x]  Future attempts will show the number of minutes remaining in the lockout.
+  * [x]  After the lockout period, the failed logins count resets to 0.
 
-6. After any successful login
-   [x]  Set the failed_logins.count for the username to 0.
+6\. [x] After any successful login
+  * [x]  Set the failed_logins.count for the username to 0.
 
-7. SQLi and XSS
-   [x]  Do not introduce any SQLI Injection and Cross-Site Scripting vulnerabilities.
+7\. [x] SQLi and XSS
+  * [x]  Do not introduce any SQLI Injection and Cross-Site Scripting vulnerabilities.
 
 The following advanced user stories are optional
 
  Bonus Objective 1.
-   [x]  Identify the subtle Username Enumeration weakness. Include a short description of how the code could be modified to be more secure below
+  * [x]  Identify the subtle Username Enumeration weakness. Include a short description of how the code could be modified to be more secure below
    * ANSWER: The user enumeration weakness comes from having two seperate error messages when user's username wasn't found vs user's unername was found but the password was incorrect.
    * In this case, "Log in was not successful" vs "Log in was unsuccessful"
    * This can be fixed by having a common error message for both cases. In my code, they are adjusted to display only "Log in was not successful"
 
 
  Bonus Objective 2.
-   [x]  User password validations only run when the password is not blank.
-   [x]  `update_user` only encrypts and updates the password when the password is not blank.
+  * [x]  User password validations only run when the password is not blank.
+  * [x]  `update_user` only encrypts and updates the password when the password is not blank.
 
  Bonus Objective 3.
-   [x]  Create a new user using cost 10.
-   [x]  Set bcrypt cost parameter to 11 (for both insert and update).
-   [x]  Try to login with the cost 10 user.
-   [x]  Briefly describe why login still works even after the cost is changed
+  * [x]  Create a new user using cost 10.
+  * [x]  Set bcrypt cost parameter to 11 (for both insert and update).
+  * [x]  Try to login with the cost 10 user.
+  * [x]  Briefly describe why login still works even after the cost is changed
     * Because the string returned by password_hash() also contains the algorithm, cost, and salt.
 
  Bonus Objective 4.
